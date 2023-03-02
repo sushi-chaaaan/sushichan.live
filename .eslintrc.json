@@ -1,0 +1,32 @@
+{
+  "plugins": ["simple-import-sort"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:tailwind/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": false
+      }
+    ],
+    "simple-import-sort/imports": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["./", "../", "~/"]
+      }
+    ]
+  }
+}
