@@ -1,5 +1,5 @@
 {
-  "plugins": ["simple-import-sort"],
+  "plugins": ["simple-import-sort", "import", "unused-imports"],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
@@ -9,7 +9,6 @@
   },
   "extends": [
     "next/core-web-vitals",
-    "plugin:tailwind/recommended",
     "prettier",
     "plugin:prettier/recommended"
   ],
@@ -22,6 +21,7 @@
       }
     ],
     "simple-import-sort/imports": "error",
+    "unused-imports/no-unused-imports": "error",
     "no-restricted-imports": [
       "error",
       {
