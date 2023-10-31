@@ -1,0 +1,13 @@
+---
+import type { Article, WebPage, WithContext } from "schema-dts"
+interface Props {
+  schema: WithContext<Article | WebPage>
+}
+
+const { schema } = Astro.props
+
+const exportedSchema = JSON.stringify(schema, null, 2)
+---
+
+{/* eslint-disable-next-line astro/no-set-html-directive */}
+<script set:html={exportedSchema} type="application/ld+json" />

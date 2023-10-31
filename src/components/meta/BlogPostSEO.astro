@@ -1,14 +1,31 @@
 ---
 import type { CollectionEntry } from "astro:content"
 import { SEO } from "astro-seo"
+import type { Article, WebPage, WithContext } from "schema-dts"
+
+import JsonLD from "@/components/meta/JsonLD.astro"
 
 type Props = {
   entry: CollectionEntry<"posts">
 }
 
 const {
-  entry: { data },
+  entry: { data, slug },
 } = Astro.props
+
+const postUrl = new URL(`/blog/post/${slug}`, Astro.url)
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  name: data.title,
+  headline: data.title,
+  description: data.description,
+  image: data.thumbnail,
+  datePublished: data.createdAt.toISOString(),
+  dateModified: data.updatedAt?.toISOString(),
+  url: postUrl.toString(),
+} as const satisfies WithContext<Article | WebPage>
 ---
 
 <SEO
@@ -17,6 +34,7 @@ const {
       title: data.title,
       type: "article",
       image: data.thumbnail,
+      url: postUrl.toString(),
     },
     image: {
       url: data.thumbnail,
@@ -45,3 +63,5 @@ const {
   titleDefault="すしにっき"
   titleTemplate="%s - すしにっき"
 />
+
+<JsonLD schema={schema} />
