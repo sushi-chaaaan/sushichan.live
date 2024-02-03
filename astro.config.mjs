@@ -46,6 +46,7 @@ export default defineConfig({
       mode: "off",
     },
   }),
+  build: { format: "preserve" },
   cacheDir: "./.astro-cache",
   experimental: { clientPrerender: true, contentCollectionCache: true },
   image: {
