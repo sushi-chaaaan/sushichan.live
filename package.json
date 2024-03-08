@@ -20,7 +20,8 @@
     "stylelint:check": "stylelint \"src/**/*.{css,scss,astro}\" --max-warnings=0",
     "markuplint": "markuplint \"./**/*.{jsx,tsx,astro}\"",
     "markuplint:check": "markuplint --no-color --problem-only \"./**/*.{jsx,tsx,astro}\"",
-    "test": "vitest"
+    "test": "vitest",
+    "tsc": "tsc"
   },
   "packageManager": "pnpm@8.15.4",
   "engines": {
@@ -37,7 +38,10 @@
     "@astrojs/ts-plugin": "^1.5.3",
     "@expressive-code/plugin-collapsible-sections": "^0.33.4",
     "@formkit/tempo": "^0.0.15",
+    "@iconify-json/vscode-icons": "^1.1.33",
     "@iconify/iconify": "^3.1.1",
+    "@iconify/icons-vscode-icons": "^1.2.29",
+    "@iconify/utils": "^2.1.22",
     "@radix-ui/react-navigation-menu": "^1.1.4",
     "@radix-ui/react-slot": "^1.0.2",
     "@resvg/resvg-js": "^2.6.0",
@@ -49,6 +53,10 @@
     "budoux": "^0.6.2",
     "clsx": "^2.1.0",
     "fetch-site-metadata": "0.1.3",
+    "hast-util-from-html": "^2.0.1",
+    "hast-util-from-html-isomorphic": "^2.0.0",
+    "hast-util-select": "^6.0.2",
+    "hastscript": "^9.0.0",
     "ie-buster": "^2.0.2",
     "katex": "^0.16.9",
     "marked": "^12.0.1",
@@ -66,13 +74,16 @@
     "remark-unwrap-images": "^4.0.0",
     "sanitize-html": "^2.12.1",
     "satori": "^0.10.13",
+    "svg-parser": "^2.0.4",
     "tailwind-variants": "^0.2.0",
     "tailwindcss": "^3.4.1",
+    "tm-grammars": "^1.4.11",
     "undici": "^6.7.0",
     "wrangler": "^3.32.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240222.0",
+    "@expressive-code/core": "^0.33.4",
     "@iconify/json": "^2.2.190",
     "@textlint/textlint-plugin-markdown": "^14.0.3",
     "@types/eslint": "8.56.5",
@@ -116,5 +127,8 @@
     "typescript": "^5.4.2",
     "unplugin-icons": "^0.18.5",
     "vitest": "^1.3.1"
+  },
+  "peerDependencies": {
+    "@expressive-code/core": "^0.33.4"
   }
 }
