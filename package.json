@@ -75,7 +75,7 @@
     "@cloudflare/workers-types": "^4.20240320.1",
     "@iconify/json": "^2.2.196",
     "@textlint/textlint-plugin-markdown": "^14.0.4",
-    "@types/eslint": "8.56.5",
+    "@types/eslint": "8.56.6",
     "@types/node": "20.11.27",
     "@types/nprogress": "^0",
     "@types/react": "^18.2.72",
